@@ -36,7 +36,7 @@ def word_learned():
     """Removes current word-translation pair from old csv file (words to be tested) and adds it to a new csv file.
     Also updates pool of words to be tested on flashcards so current word-translation pair no longer appears."""
     with open("data/learned_words.csv", "a") as file:
-        file.write(f"{new_word_pair["French"]}, {new_word_pair["English"]}\n")
+        file.write(f"{new_word_pair['French']}, {new_word_pair['English']}\n")
     data_dict.remove(new_word_pair)
     words_to_learn = pandas.DataFrame(data_dict)
     words_to_learn.to_csv("data/words_to_learn.csv", index=False)
